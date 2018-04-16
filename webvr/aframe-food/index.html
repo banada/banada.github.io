@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+		<script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+		<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.4/dist/aframe-extras.min.js"></script>
+		<script src="croppie.js"></script>
+		<link rel="stylesheet" type="text/css" href="croppie.css"></link>
+		
+	</head>
+	<body>
+		Choose a file to begin <br>
+		<input type="file" id="fileinput" accept="image/*"></input>
+		<!-- TODO switch between plate and bowl types -->
+		<div class="croppie-container" style="height: 400px">
+			<img id="image" src=""></img>
+		</div>
+		<a href="#" id="preview">Preview</a>
+		<br>
+		<a href="#" id="save">Save</a>
+
+
+		<a-scene embedded style="display: block; height: 50%; width: 50%" environment="preset: forest;" physics="debug: true">
+		
+			<a-cylinder id="cylinder" radius="0.18" height="0.01" position="0 1.35 -0.6" src="pork_rice.png" position="0 0.1 0"></a-cylinder>
+			<a-obj-model src="bowl.obj" mtl="bowl.mtl" scale="0.0062 0.0062 0.0062" position="0 1.2 -0.6"></a-obj-model>
+			
+		</a-scene>
+	</body>
+	<script>
+		var croppie = null;
+		var imageURL;
+		
+		var fileinput = document.getElementById('fileinput');
+		fileinput.addEventListener('change', function(evt) {
+			var file = fileinput.files[0];
+			var img = document.createElement('img');
+			var filereader = new FileReader();
+			filereader.onload = function(evt) {
+				imageURL = filereader.result;
+				document.getElementById('image').src = filereader.result;
+				if (croppie !== null) {
+					croppie.destroy();
+				}
+				croppie = new Croppie(document.getElementById('image'), {
+					viewport: {
+						width: 200,
+						height: 200,
+						type: "circle"
+					},
+					boundary: {
+						width: 300,
+						height: 300
+					}
+				});
+			}
+			filereader.readAsDataURL(file);
+			
+		});
+		
+		document.getElementById('save').onclick = function() {
+			croppie.result().then(function(img) {
+				var file = document.createElement('a');
+				file.href = img;
+				file.download = 'food.png';
+				file.click();
+				document.getElementById('cylinder').setAttribute('src', img);
+			});
+		}
+		
+		document.getElementById('preview').onclick = function() {
+			croppie.result().then(function(img) {
+				document.getElementById('cylinder').setAttribute('src', img);
+			});
+		}
+		
+	</script>
+</html>
+
