@@ -5,9 +5,22 @@
 		<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
 		<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
 		<script src="aframe-object-scaling.js"></script>
+        <link href="../styles.css" rel="stylesheet" type="text/css"></link>
     </head>
     <body>
-        <a-scene embedded>
+        <h1>A-Frame Object Resizer</h1>
+        <h3>A tool to resize Google Poly objects for use in A-Frame</h3>
+        <p class="controls">Controls</p>
+        <div class="control-list">
+            <p>W / A / S / D - move around the scene</p>
+            <p>Mouse click and drag - look around the scene</p>
+            <p>Space bar - scale down the object (m / ft / in / cm / mm / um)</p>
+            <p>Mouse scroll wheel - fine tune the scaling</p>
+            <p>Q / E keys - move object up or down</p>
+            <p>H key - show a human for scale</p>
+        </div>
+
+        <a-scene embedded id="scene">
 			<a-entity id="cameraRig" position="0 1.3 4">
 				<a-entity id="head" camera wasd-controls look-controls></a-entity>
 				<a-entity id="left-hand" sizing-tool="hand: left" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head" vive-controls="hand: left"></a-entity>

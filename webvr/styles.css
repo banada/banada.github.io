@@ -1,6 +1,6 @@
 @font-face {
     font-family: open_sans_light;
-    src: url(fonts/OpenSans-Light.ttf);
+    src: url(https://banada.github.io/webvr/fonts/OpenSans-Light.ttf);
 }
 
 * {
@@ -15,7 +15,17 @@ h1 {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 50px;
+    border: solid blue 1px;
+}
+
+h3 {
+    font-family: open_sans_light;
+    font-size: 30px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
     border: solid blue 1px;
 }
 
@@ -24,8 +34,19 @@ p {
     font-family: open_sans_light;
     max-width: 800px;
     margin: 0 auto;
-    margin-top: 150px;
     border: solid blue 1px;
+}
+
+p.link {
+    margin-top: 150px;
+}
+
+p.controls {
+    margin-top: 50px;
+}
+
+.control-list {
+    margin-left: 100px;
 }
 
 .thumbnail {
@@ -36,4 +57,10 @@ p {
 .thumbnail-ctnr {
     border: solid blue 1px;
     text-align: center;
+}
+
+#scene {
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
 }
