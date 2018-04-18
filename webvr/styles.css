@@ -3,6 +3,11 @@
     src: url(https://banada.github.io/webvr/fonts/OpenSans-Light.ttf);
 }
 
+@font-face {
+    font-family: open_sans_semibold;
+    src: url(https://banada.github.io/webvr/fonts/OpenSans-SemiBold.ttf);
+}
+
 * {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -10,12 +15,11 @@
 }
 
 h1 {
-    font-family: open_sans_light;
+    font-family: open_sans_semibold;
     font-size: 40px;
     text-align: center;
     max-width: 800px;
-    margin: 0 auto;
-    margin-top: 50px;
+    margin: 50px auto;
     border: solid blue 1px;
 }
 
@@ -30,33 +34,86 @@ h3 {
 }
 
 p {
-    font-size: 24px;
+    font-size: 36px;
     font-family: open_sans_light;
     max-width: 800px;
     margin: 0 auto;
     border: solid blue 1px;
 }
 
-p.link {
-    margin-top: 150px;
+.container {
+    overflow: auto;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    border: solid blue 1px;
+}
+
+#scaling-thumbnail {
+    max-width: 40%;
+    float: left;
+    margin: 50px 50px;
+}
+
+#scaling-text {
+    margin-top: 100px;
+    margin-left: 50%;
+}
+
+#food-thumbnail-1 {
+    max-width: 25%;
+    margin: 50px auto;
+    float: right;
+}
+
+#food-thumbnail-2 {
+    max-width: 25%;
+    margin: 50px auto;
+    float: right;
+}
+
+#food-text {
+    margin-top: 100px;
+    margin-right: 50%;
+}
+
+@media screen and (max-width: 1100px) {
+    #scaling-thumbnail {
+        margin: 50px 30%;
+    }
+
+    #scaling-text {
+        clear: left;
+        margin: 50px auto;
+    }
+
+    #food-thumbnail-1 {
+        margin-right: 0px;
+    }
+
+    #food-thumbnail-2 {
+        margin-right: 100px;
+    }
+
+    #food-text {
+        clear: right;
+        margin: 50px auto;
+    }
 }
 
 p.controls {
     margin-top: 50px;
 }
 
-.control-list {
-    margin-left: 100px;
+p.control-item {
+    position: relative;
+    margin-left: 50px;
 }
 
-.thumbnail {
-    max-width: 300px;
+.control-list > p {
     margin: 0 auto;
-}
-
-.thumbnail-ctnr {
-    border: solid blue 1px;
-    text-align: center;
+    text-indent: 50px;
+    font-size: 18px;
 }
 
 #scene {
