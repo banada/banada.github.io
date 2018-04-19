@@ -20,7 +20,6 @@ h1 {
     text-align: center;
     max-width: 800px;
     margin: 50px auto;
-    border: solid blue 1px;
 }
 
 h3 {
@@ -30,7 +29,6 @@ h3 {
     max-width: 800px;
     margin: 0 auto;
     margin-top: 50px;
-    border: solid blue 1px;
 }
 
 p {
@@ -38,7 +36,6 @@ p {
     font-family: open_sans_light;
     max-width: 800px;
     margin: 0 auto;
-    border: solid blue 1px;
 }
 
 .container {
@@ -46,13 +43,14 @@ p {
     width: 80%;
     margin: 0 auto;
     position: relative;
-    border: solid blue 1px;
 }
 
 #scaling-thumbnail {
     max-width: 40%;
     float: left;
     margin: 50px 50px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 3px #666666;
 }
 
 #scaling-text {
@@ -64,12 +62,16 @@ p {
     max-width: 25%;
     margin: 50px auto;
     float: right;
+    border-radius: 8px;
+    box-shadow: 0px 2px 3px #666666;
 }
 
 #food-thumbnail-2 {
     max-width: 25%;
-    margin: 50px auto;
+    margin: 50px 8px;
     float: right;
+    border-radius: 10px;
+    box-shadow: 0px 2px 3px #666666;
 }
 
 #food-text {
