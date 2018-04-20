@@ -35,7 +35,7 @@ p {
     font-size: 36px;
     font-family: open_sans_light;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 .container {
@@ -160,4 +160,30 @@ p.control-item {
     margin: 0 auto;
     border: solid blue 1px;
     text-align: center;
+}
+
+.linkbutton {
+    background-color: #74a2ed;
+    color: white;
+    padding: 2px 25px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.linkbutton:hover {
+    cursor: pointer;
+}
+
+.foodimagecontainer {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.foodimage {
+    display: inline-block;
+    max-width: 15%;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0px 2px 3px #666666;
 }
